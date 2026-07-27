@@ -64,6 +64,7 @@ The system expects single-byte ASCII characters over UART (`9600 8-N-1`) to trig
 
 ## 📂 Repository Structure
 ```text
+├── report-fa.docx               # Final project report word file (Persian)
 ├── report-fa.pdf                # Final project report (Persian)
 ├── TODO.md                      # Project development roadmap
 ├── src/
