@@ -1,9 +1,25 @@
-# Digital Lab Final Project: Bluetooth-Controlled ATmega64 System
+# TempraLink: Bluetooth-Controlled ATmega64 System
 
 ![Circuit Simulation](src/Project-Simulation.svg)
 
 ## 📌 Overview
-This repository contains the firmware, simulation, and documentation for a comprehensive Embedded Systems project based on the **ATmega64A** microcontroller. The system establishes a two-way Bluetooth communication link with an Android smartphone, allowing the user to monitor environmental temperature and remotely control various actuators (LEDs, Relays, and a Buzzer).
+**TempraLink** is a commercial-grade embedded system solution for remote monitoring and control. Based on the robust **ATmega64A** microcontroller, the system establishes a two-way Bluetooth communication link with an Android smartphone, allowing users to monitor environmental temperature and remotely control various actuators (LEDs, Relays, and a Buzzer).
+
+## 🚀 Commercial Product Information
+
+| Attribute | Description |
+| :--- | :--- |
+| **Product Name** | TempraLink |
+| **Product Type** | Bluetooth Remote I/O & Temperature Monitor |
+| **Target Market** | Industrial Automation, Smart Home, Educational Labs |
+| **Key Differentiator** | Simultaneous control of multiple relays with real-time temperature feedback (C/F). |
+
+### Key Selling Points
+- **Remote Monitoring:** Check temperature from your phone without leaving your desk.
+- **Industrial Reliability:** Uses MOSFET and transistor drivers for high-current relays and buzzers.
+- **Simple Integration:** The universal command protocol (ASCII characters) makes it easy to integrate with existing Bluetooth apps.
+
+---
 
 ## ✨ Key Features
 - **Real-Time Temperature Monitoring:** Reads analog data from an LM35 sensor (converted via ADC) and displays it on a 20x4 LCD in both Celsius and Fahrenheit.
@@ -47,20 +63,20 @@ The system expects single-byte ASCII characters over UART (`9600 8-N-1`) to trig
 - **Virtual Serial Port Emulator:** (Optional but required for PC-to-Android simulation) to bridge Windows Bluetooth to COM ports.
 
 ### 2. Setup Instructions
-1. **Compile the Firmware:**
-   - Open `src/code/project.prj` in CodeVisionAVR.
-   - Build the project (`Shift + F9`) to generate the `.hex` file.
-2. **Configure Windows Bluetooth Port:**
-   - Pair your Android phone with your Windows PC.
-   - In Windows Device Manager, find your Bluetooth COM port and force its number to **COM30** (via *Properties > Port Settings > Advanced*).
-3. **Run Proteus:**
-   - Open `src/Project-Simulation.pdsprj`.
-   - Double-click the `COMPIM` module and ensure **Physical Port** is set to `COM30` and **Hardware Flow Control** is set to `None`.
-   - Click the **Play** button at the bottom left.
-4. **Connect via Android:**
-   - Open the "Arduino Bluetooth Control" app on your phone.
-   - Connect to your PC's Bluetooth name.
-   - Navigate to the **Switches** page and start controlling the circuit!
+1.  **Compile the Firmware:**
+    - Open `src/code/project.prj` in CodeVisionAVR.
+    - Build the project (`Shift + F9`) to generate the `.hex` file.
+2.  **Configure Windows Bluetooth Port:**
+    - Pair your Android phone with your Windows PC.
+    - In Windows Device Manager, find your Bluetooth COM port and force its number to **COM30** (via *Properties > Port Settings > Advanced*).
+3.  **Run Proteus:**
+    - Open `src/Project-Simulation.pdsprj`.
+    - Double-click the `COMPIM` module and ensure **Physical Port** is set to `COM30` and **Hardware Flow Control** is set to `None`.
+    - Click the **Play** button at the bottom left.
+4.  **Connect via Android:**
+    - Open the "Arduino Bluetooth Control" app on your phone.
+    - Connect to your PC's Bluetooth name.
+    - Navigate to the **Switches** page and start controlling the circuit!
 
 ## 📂 Repository Structure
 ```text
@@ -73,11 +89,9 @@ The system expects single-byte ASCII characters over UART (`9600 8-N-1`) to trig
 │   └── code/                     # Firmware source code
 │       ├── project.c             # Main C logic
 │       └── project.prj           # CodeVisionAVR project file
-
 ```
 
 ---
 
 *Developed for the Digital Laboratory Final Project. Coded in CodeVisionAVR, simulated in Proteus.*
-
 ```
